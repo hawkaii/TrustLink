@@ -47,10 +47,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
       ),
       Post(
         username: 'Ankit Patel',
-        profileImage: CustomImageAsset.ankitDp,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.ankit,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
       Post(
         username: 'Anurag Singh',
@@ -61,10 +61,10 @@ class _UserProfilePageState extends State<UserProfilePage> {
       ),
       Post(
         username: 'Archi',
-        profileImage: CustomImageAsset.archi,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.archiPost,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
     ];
   }
@@ -126,7 +126,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               const CircleAvatar(
                                 radius: 40,
                                 backgroundImage: AssetImage(
-                                  CustomImageAsset.ankitDp,
+                                  CustomImageAsset.splashScreenImg,
                                 ),
                               ),
                               Row(
@@ -434,12 +434,16 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.heartyMoment),
-          momentItem(CustomImageAsset.archi, CustomImageAsset.thumb),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.questionMark),
-          momentItem(CustomImageAsset.archi, CustomImageAsset.onePlus),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.namaste),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.heartyMoment),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.questionMark),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.namaste),
         ],
       ),
     );
@@ -450,9 +454,10 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.onePlus),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.thumb),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
         ],
       ),
     );
@@ -596,18 +601,18 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
     return Column(
       children: [
         _buildActivityItem(
-          profileImage: CustomImageAsset.archi,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Archi Maze',
           time: '4 hours ago',
-          postImg: CustomImageAsset.archiPost,
+          postImg: CustomImageAsset.splashScreenImg,
           description: 'This is a sample activity description.',
         ),
         _buildActivityItem(
-          profileImage: CustomImageAsset.ankitDp,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Ankit Patel',
           time: '6 hours ago',
           description: 'This is another sample activity description.',
-          postImg: CustomImageAsset.ankit,
+          postImg: CustomImageAsset.splashScreenImg,
         ),
       ],
     );
@@ -776,7 +781,8 @@ class BuildRequirementsItems extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(child: Image.asset(CustomImageAsset.ankitDp)
+                CircleAvatar(
+                    child: Image.asset(CustomImageAsset.splashScreenImg)
                     // radius: 24,
                     // backgroundImage: NetworkImage(
                     //   "https://via.placeholder.com/150",

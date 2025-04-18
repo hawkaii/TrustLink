@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 import '../../res/assets/image_assets.dart';
@@ -12,7 +11,9 @@ class CommentsBottomSheet extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.only(
-        bottom: MediaQuery.of(context).viewInsets.bottom, // Adjust padding for keyboard
+        bottom: MediaQuery.of(context)
+            .viewInsets
+            .bottom, // Adjust padding for keyboard
       ),
       child: Container(
         height: size.height * 0.8,
@@ -33,7 +34,8 @@ class CommentsBottomSheet extends StatelessWidget {
                 itemCount: 4, // Number of comments
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 10), // Space between comments
+                    padding: const EdgeInsets.only(
+                        bottom: 10), // Space between comments
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -42,7 +44,8 @@ class CommentsBottomSheet extends StatelessWidget {
                           children: [
                             const CircleAvatar(
                               radius: 20,
-                              backgroundImage: AssetImage(CustomImageAsset.ankitDp),
+                              backgroundImage:
+                                  AssetImage(CustomImageAsset.splashScreenImg),
                             ),
                             const SizedBox(width: 10),
                             Expanded(
@@ -77,7 +80,7 @@ class CommentsBottomSheet extends StatelessWidget {
                           ],
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left:44),
+                          padding: const EdgeInsets.only(left: 44),
                           child: TextButton(
                             onPressed: () {},
                             child: const Text(
@@ -102,9 +105,11 @@ class CommentsBottomSheet extends StatelessWidget {
               child: Row(
                 children: [
                   // Circle image next to the comment input
-                   const CircleAvatar(
+                  const CircleAvatar(
                     radius: 20,
-                    backgroundImage: AssetImage(CustomImageAsset.ankitDp,), // Your avatar image
+                    backgroundImage: AssetImage(
+                      CustomImageAsset.splashScreenImg,
+                    ), // Your avatar image
                   ),
                   const SizedBox(width: 10),
                   Expanded(
@@ -128,7 +133,8 @@ class CommentsBottomSheet extends StatelessWidget {
                     backgroundColor: Colors.teal,
                     child: IconButton(
                       onPressed: () {},
-                      icon: const Icon(Icons.send, color: Colors.white, size: 20),
+                      icon:
+                          const Icon(Icons.send, color: Colors.white, size: 20),
                     ),
                   ),
                 ],

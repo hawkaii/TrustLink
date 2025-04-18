@@ -8,16 +8,9 @@ class CustomImageAsset {
   static const String questionMark = 'assets/images/question.png';
   static const String star = 'assets/images/star.png';
   static const String thumb = 'assets/images/thumb.png';
-  static const String ankitDp = 'assets/images/ankit_dp.png';
-  static const String ankit = 'assets/images/ankit.png';
-  static const String archi = 'assets/images/archi.png';
-  static const String archiPost = 'assets/images/archi_post.jpg';
   static const String dynamic = 'assets/images/dynamic.jpg';
   static const String mountains = 'assets/images/mountains.png';
   static const String kishorSinger = 'assets/images/kishor_singer.png';
-
-
-
 
   /// SVG Image for whole app ///
   static const String chatSvg = 'assets/images/svg/chat.svg';
@@ -44,5 +37,4 @@ class CustomImageAsset {
   static const String whatsapp = 'assets/images/svg/whatsapp.svg';
   static const String facebook = 'assets/images/svg/facebook.svg';
   static const String messages = 'assets/images/svg/messages.svg';
-
 }
