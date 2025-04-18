@@ -1,9 +1,8 @@
 import 'package:dio/dio.dart';
 
 class ApiConstants {
-  static const String baseUrl = "https://tienext.inceptionsoftech.com/v1";
+  static const String baseUrl = "http://139.59.36.95:5000/v1";
 }
-
 
 final dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl));
 
