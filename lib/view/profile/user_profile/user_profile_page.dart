@@ -7,8 +7,10 @@ import 'package:tienext/res/extensions/media_query_extensions.dart';
 import 'package:tienext/res/extensions/widget_extensions.dart';
 import 'package:tienext/res/widgets/requirment_card.dart';
 import 'package:tienext/view/chat_screen/chat_list_page.dart';
+import 'package:tienext/view/profile/donation/dontation_page/don_binding.dart';
+import 'package:tienext/view/profile/donation/dontation_page/donation_page.dart';
 import 'package:tienext/view/profile/user_profile/widgets/moments_item.dart';
-import 'package:tienext/view/requirement/requirement_screen.dart';
+
 import '../../../models/home/user_model.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/custom_dialog.dart';
@@ -16,7 +18,6 @@ import '../../../res/constants/string.dart';
 import '../../../res/helpers/dialog_helper.dart';
 import '../../home_page/widgets/icon_widgets.dart';
 import '../../requirement/requirement_owner_details.dart';
-import '../../sharing/sharing_screen.dart';
 import '../timiline_components.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -33,41 +34,41 @@ class _UserProfilePageState extends State<UserProfilePage> {
   @override
   void initState() {
     super.initState();
-    _postsFuture = fetchPosts();
+    // _postsFuture = fetchPosts();
   }
 
-  Future<List<Post>> fetchPosts() async {
-    return [
-      Post(
-        username: 'Christopher Nolan',
-        time: 'Just a moment ago',
-        postImg: CustomImageAsset.back,
-        profileImage: CustomImageAsset.thumb,
-        description: 'Dynamic post from backend!',
-      ),
-      Post(
-        username: 'Ankit Patel',
-        profileImage: CustomImageAsset.ankitDp,
-        time: '5 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.ankit,
-      ),
-      Post(
-        username: 'Anurag Singh',
-        profileImage: CustomImageAsset.star,
-        time: '15 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.dynamic,
-      ),
-      Post(
-        username: 'Archi',
-        profileImage: CustomImageAsset.archi,
-        time: '5 minutes ago',
-        description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.archiPost,
-      ),
-    ];
-  }
+  // Future<List<Post>> fetchPosts() async {
+  //   return [
+  //     Post(
+  //       username: 'Christopher Nolan',
+  //       time: 'Just a moment ago',
+  //       postImg: CustomImageAsset.back,
+  //       profileImage: CustomImageAsset.thumb,
+  //       description: 'Dynamic post from backend!',
+  //     ),
+  //     Post(
+  //       username: 'Ankit Patel',
+  //       profileImage: CustomImageAsset.splashScreenImg,
+  //       time: '5 minutes ago',
+  //       description: 'Learning Flutter, it’s awesome.',
+  //       postImg: CustomImageAsset.splashScreenImg,
+  //     ),
+  //     Post(
+  //       username: 'Anurag Singh',
+  //       profileImage: CustomImageAsset.star,
+  //       time: '15 minutes ago',
+  //       description: 'Learning Flutter, it’s awesome.',
+  //       postImg: CustomImageAsset.dynamic,
+  //     ),
+  //     Post(
+  //       username: 'Archi',
+  //       profileImage: CustomImageAsset.splashScreenImg,
+  //       time: '5 minutes ago',
+  //       description: 'Learning Android, it’s awesome.',
+  //       postImg: CustomImageAsset.splashScreenImg,
+  //     ),
+  //   ];
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -126,7 +127,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               const CircleAvatar(
                                 radius: 40,
                                 backgroundImage: AssetImage(
-                                  CustomImageAsset.ankitDp,
+                                  CustomImageAsset.splashScreenImg,
                                 ),
                               ),
                               Row(
@@ -191,21 +192,43 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                     ),
                                   ),
                                   const SizedBox(width: 8),
-                                  IconButton(
-                                    style: IconButton.styleFrom(
-                                      minimumSize: const Size(30, 30),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
+                                  InkWell(
+                                    onDoubleTap: () {
+                                      Get.to(() => DonationPage(),
+                                          binding: DonationBinding());
+                                    },
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        color: Colors.white,
                                       ),
-                                      backgroundColor: Colors.white,
-                                      padding: EdgeInsets.zero,
+                                      child: const Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 10.0,
+                                              right: 10,
+                                              top: 3,
+                                              bottom: 3),
+                                          child: Column(
+                                            children: [
+                                              Icon(
+                                                Icons
+                                                    .volunteer_activism_rounded,
+                                                color: Colors.green,
+                                              ),
+                                              Text(
+                                                "Donate",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 9, 140, 13)),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                    icon: const Icon(
-                                      Icons.arrow_drop_down_circle_outlined,
-                                      size: 18,
-                                    ),
-                                    onPressed: () {},
-                                  ),
+                                  )
                                 ],
                               ),
                             ],
@@ -434,12 +457,16 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.heartyMoment),
-          momentItem(CustomImageAsset.archi, CustomImageAsset.thumb),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.questionMark),
-          momentItem(CustomImageAsset.archi, CustomImageAsset.onePlus),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.namaste),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.heartyMoment),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.questionMark),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.namaste),
         ],
       ),
     );
@@ -450,9 +477,10 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.onePlus),
-          momentItem(CustomImageAsset.ankitDp, CustomImageAsset.thumb),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+          momentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
         ],
       ),
     );
@@ -596,18 +624,18 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
     return Column(
       children: [
         _buildActivityItem(
-          profileImage: CustomImageAsset.archi,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Archi Maze',
           time: '4 hours ago',
-          postImg: CustomImageAsset.archiPost,
+          postImg: CustomImageAsset.splashScreenImg,
           description: 'This is a sample activity description.',
         ),
         _buildActivityItem(
-          profileImage: CustomImageAsset.ankitDp,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Ankit Patel',
           time: '6 hours ago',
           description: 'This is another sample activity description.',
-          postImg: CustomImageAsset.ankit,
+          postImg: CustomImageAsset.splashScreenImg,
         ),
       ],
     );
@@ -776,7 +804,8 @@ class BuildRequirementsItems extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(child: Image.asset(CustomImageAsset.ankitDp)
+                CircleAvatar(
+                    child: Image.asset(CustomImageAsset.splashScreenImg)
                     // radius: 24,
                     // backgroundImage: NetworkImage(
                     //   "https://via.placeholder.com/150",

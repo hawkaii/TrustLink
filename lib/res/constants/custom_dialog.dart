@@ -210,8 +210,8 @@ class ShareBottomSheet extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: width * 0.08,
-                    backgroundImage: const AssetImage(
-                        CustomImageAsset.ankitDp),
+                    backgroundImage:
+                        const AssetImage(CustomImageAsset.splashScreenImg),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -274,13 +274,10 @@ class ShareBottomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildShareIcon(
-                  context, CustomImageAsset.whatsapp, 'WhatsApp'),
-              _buildShareIcon(
-                  context, CustomImageAsset.messages, 'Messages'),
+              _buildShareIcon(context, CustomImageAsset.whatsapp, 'WhatsApp'),
+              _buildShareIcon(context, CustomImageAsset.messages, 'Messages'),
               _buildShareIcon(context, CustomImageAsset.threads, 'Threads'),
-              _buildShareIcon(
-                  context, CustomImageAsset.facebook, 'Facebook'),
+              _buildShareIcon(context, CustomImageAsset.facebook, 'Facebook'),
             ],
           ),
           const SizedBox(height: 16),
@@ -369,7 +366,7 @@ class MentionedBottomSheet extends StatelessWidget {
                     CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage(
-                        CustomImageAsset.archi,
+                        CustomImageAsset.splashScreenImg,
                       ),
                     ),
                     SizedBox(height: 8),

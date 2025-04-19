@@ -420,8 +420,8 @@ class _SharingScreenState extends State<SharingScreen> {
     final List<String> imagePaths = [
       CustomImageAsset.mountains,
       CustomImageAsset.kishorSinger,
-      CustomImageAsset.archiPost,
-      CustomImageAsset.ankit,
+      CustomImageAsset.splashScreenImg,
+      CustomImageAsset.splashScreenImg,
     ];
 
     return SizedBox(

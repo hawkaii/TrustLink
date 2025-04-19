@@ -105,7 +105,7 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               const CircleAvatar(
                                 radius: 40,
                                 backgroundImage: AssetImage(
-                                  CustomImageAsset.ankitDp,
+                                  CustomImageAsset.splashScreenImg,
                                 ),
                               ),
                               Row(
@@ -207,7 +207,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Name');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Name');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -229,7 +230,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'UserName');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'UserName');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -265,7 +267,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Work Role');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Work Role');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -299,7 +302,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Location');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Location');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -336,7 +340,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                             )),
                         InkWell(
                           onTap: () {
-                            AppDialogHelper().showEditDialog(context, 'Location');
+                            AppDialogHelper()
+                                .showEditDialog(context, 'Location');
                           },
                           child: const Icon(
                             Icons.edit,

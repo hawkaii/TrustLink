@@ -38,10 +38,10 @@ class _HomePageState extends State<HomePage> {
       ),
       Post(
         username: 'Ankit Patel',
-        profileImage: CustomImageAsset.ankitDp,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.ankit,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
       Post(
         username: 'Anurag Singh',
@@ -52,10 +52,10 @@ class _HomePageState extends State<HomePage> {
       ),
       Post(
         username: 'Archi',
-        profileImage: CustomImageAsset.archi,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.archiPost,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
     ];
   }
@@ -151,12 +151,14 @@ Widget buildTodayMoments() {
     scrollDirection: Axis.horizontal,
     child: Row(
       children: [
-        momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.heartyMoment),
-        momentItem(CustomImageAsset.archi, CustomImageAsset.thumb),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.questionMark),
-        momentItem(CustomImageAsset.archi, CustomImageAsset.onePlus),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.namaste),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+        momentItem(
+            CustomImageAsset.splashScreenImg, CustomImageAsset.heartyMoment),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
+        momentItem(
+            CustomImageAsset.splashScreenImg, CustomImageAsset.questionMark),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.namaste),
       ],
     ),
   );
