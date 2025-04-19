@@ -25,6 +25,7 @@ class SignUpScreen1 extends StatefulWidget {
 }
 
 class _SignUpScreen1State extends State<SignUpScreen1> {
+  // Controllers for text fields
   final SignUp1Controller controller = Get.put(SignUp1Controller());
   final TextEditingController fullNameController = TextEditingController();
   final TextEditingController emailPhoneController = TextEditingController();
@@ -34,6 +35,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
 
   @override
   void dispose() {
+    // Dispose controllers to free resources
     fullNameController.dispose();
     emailPhoneController.dispose();
     passwordController.dispose();
@@ -43,6 +45,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
 
   @override
   void initState() {
+    // Initialize the controller to get the current location
     controller.getCurrentLocation();
     super.initState();
   }
@@ -56,6 +59,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
           padding: EdgeInsets.symmetric(horizontal: context.fullWidth * 0.1),
           child: Column(
             children: [
+              // Logo and introductory text
               SizedBox(height: context.fullHeight * 0.05),
               Image.asset(
                 CustomImageAsset.logotrustlinkImage,
@@ -67,16 +71,22 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
               const Text(kCreateAccount,
                   style: TextStyle(fontSize: 16, color: AppColors.grey500)),
               SizedBox(height: context.fullHeight * 0.02),
+
+              // Full name input field
               CustomTextField(
                 controller: fullNameController,
                 hintText: kName,
                 onChanged: (value) => controller.name.value = value,
               ),
+
+              // Email or phone input field
               CustomTextField(
                 controller: emailPhoneController,
                 hintText: kEnterPhone,
                 onChanged: (value) => controller.emailOrPhone.value = value,
               ),
+
+              // Password input field with visibility toggle
               Consumer<AuthProvider>(
                 builder: (context, authProvider, child) {
                   return CustomTextField(
@@ -92,6 +102,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                   );
                 },
               ),
+
+              // Date of birth input field with date picker
               Obx(
                 () => CustomTextField(
                   hintText: kDOB,
@@ -118,6 +130,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                   ),
                 ),
               ),
+
+              // Gender selection radio buttons
               10.height,
               const Align(
                 alignment: Alignment.centerLeft,
@@ -148,10 +162,13 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                   ],
                 ),
               ),
+
+              // Next button with validation
               20.height,
               CustomButton(
                 text: kNext,
                 onPressed: () async {
+                  // Validate input fields
                   if (fullNameController.text.isEmpty ||
                       emailPhoneController.text.isEmpty ||
                       controller.selectedGender.value.isEmpty ||
@@ -160,6 +177,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                     "All fields are required".showToast();
                     return;
                   }
+
+                  // Validate age
                   final dob =
                       DateTime.parse(controller.selectedDateOfBirth.value);
                   final currentDate = DateTime.now();
@@ -175,6 +194,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                         .showToast();
                     return;
                   }
+
+                  // Navigate to the next signup screen
                   Get.to(
                     () => SignUpScreen2(
                       email: emailPhoneController.text,
@@ -187,6 +208,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                   );
                 },
               ),
+
+              // Terms and privacy policy
               SizedBox(height: context.fullHeight * 0.03),
               GestureDetector(
                 onTap: () {
@@ -221,6 +244,8 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                   textAlign: TextAlign.center,
                 ),
               ),
+
+              // Login redirection
               20.height,
               GestureDetector(
                 onTap: () {
@@ -253,6 +278,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
   }
 }
 
+// Gender radio button widget
 class GenderRadioButton extends StatelessWidget {
   final String label;
   final bool isSelected;
