@@ -178,7 +178,6 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                     return;
                   }
 
-                  // Validate age
                   final dob =
                       DateTime.parse(controller.selectedDateOfBirth.value);
                   final currentDate = DateTime.now();
