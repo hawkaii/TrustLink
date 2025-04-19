@@ -1,0 +1,2 @@
+C:/Users/mukhe/git/TrustLink/android/app/.cxx/RelWithDebInfo/6e253mgr/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/mukhe/git/TrustLink/android/app/.cxx/RelWithDebInfo/6e253mgr/arm64-v8a/CMakeFiles/rebuild_cache.dir
