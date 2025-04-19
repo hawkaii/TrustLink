@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tienext/res/extensions/text_style_extensions.dart';
+import 'package:trustlink/res/extensions/text_style_extensions.dart';
 import '../constants/colors.dart';
-
 
 class AppTheme {
   ThemeData getAppTheme() => ThemeData(
@@ -11,8 +10,9 @@ class AppTheme {
       floatingActionButtonTheme: _floatingActionButtonThemeData,
       dialogTheme: _dialogTheme());
 
-  AppBarTheme _appBarTheme() =>
-       AppBarTheme(backgroundColor: AppColors.orange400,titleTextStyle: const TextStyle().whiteTitleTextStyle);
+  AppBarTheme _appBarTheme() => AppBarTheme(
+      backgroundColor: AppColors.orange400,
+      titleTextStyle: const TextStyle().whiteTitleTextStyle);
 
   ElevatedButtonThemeData _buttonThemeData() => ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(

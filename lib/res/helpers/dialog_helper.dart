@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import '../../view/home_page/comment_screen.dart';
 import '../constants/colors.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

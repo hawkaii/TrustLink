@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:tienext/res/extensions/int_extensions.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/int_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import '../../../provider/auth_provider.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/string.dart';
@@ -52,7 +52,7 @@ class _SignUpScreen2State extends State<SignUpScreen2> {
             children: [
               SizedBox(height: context.fullHeight * 0.06),
               Image.asset(
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.04),

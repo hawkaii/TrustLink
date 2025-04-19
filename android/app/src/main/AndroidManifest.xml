@@ -4,7 +4,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <application
-        android:label="tienext"
+        android:label="trustlink"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

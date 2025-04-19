@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/res/widgets/requirment_card.dart';
-import 'package:tienext/view/requirement/requirement_owner_details.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/res/widgets/requirment_card.dart';
+import 'package:trustlink/view/requirement/requirement_owner_details.dart';
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/colors.dart';
 import '../../res/constants/string.dart';

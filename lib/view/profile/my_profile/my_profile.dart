@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/setting/setting_screen.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/setting/setting_screen.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/custom_dialog.dart';
 import '../../../res/constants/string.dart';
@@ -12,7 +12,7 @@ import '../../home_page/comment_screen.dart';
 import '../../home_page/widgets/icon_widgets.dart';
 import '../../requirement/requirement_owner_details.dart';
 import '../timiline_components.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import 'my_profile_edit.dart';
 
 class MyProfilePage extends StatefulWidget {

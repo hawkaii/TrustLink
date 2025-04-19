@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/assets/image_assets.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
+import 'package:trustlink/res/assets/image_assets.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
 import '../../../models/home/user_model.dart';
 import '../../../res/helpers/dialog_helper.dart';
 import '../../../res/constants/custom_dialog.dart';

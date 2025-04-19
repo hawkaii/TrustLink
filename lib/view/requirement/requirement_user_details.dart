@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/colors.dart';
 import '../../res/constants/string.dart';
@@ -18,9 +18,11 @@ class RequirementUserDetails extends StatelessWidget {
         title: const Text('Requirement Details'),
         centerTitle: true,
         backgroundColor: Colors.white,
-        leading: IconButton(onPressed: () {
-          Get.back();
-        }, icon: const Icon(Icons.arrow_back_ios)),
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: const Icon(Icons.arrow_back_ios)),
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
         titleTextStyle: const TextStyle(

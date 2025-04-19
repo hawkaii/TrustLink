@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/view/auth/login/login_page.dart';
-import 'package:tienext/view/mention/mention_setting.dart';
-import 'package:tienext/view/profile/my_profile/my_profile_edit.dart';
-import 'package:tienext/view/setting/privacy_policy.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/view/auth/login/login_page.dart';
+import 'package:trustlink/view/mention/mention_setting.dart';
+import 'package:trustlink/view/profile/my_profile/my_profile_edit.dart';
+import 'package:trustlink/view/setting/privacy_policy.dart';
 import '../../res/constants/text_theme.dart';
 import '../auth/reset_password/change_password.dart';
 import '../notification/notification_screen.dart';

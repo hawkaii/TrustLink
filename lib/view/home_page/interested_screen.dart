@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/buttom_nav.dart';
 import '../../res/constants/string.dart';
