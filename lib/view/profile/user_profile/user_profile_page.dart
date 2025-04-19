@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+
 import 'package:trustlink/res/constants/colors.dart';
 import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import 'package:trustlink/res/extensions/widget_extensions.dart';
@@ -9,6 +10,7 @@ import 'package:trustlink/res/widgets/requirment_card.dart';
 import 'package:trustlink/view/chat_screen/chat_list_page.dart';
 import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
 import 'package:trustlink/view/requirement/requirement_screen.dart';
+
 import '../../../models/home/user_model.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/custom_dialog.dart';
@@ -16,7 +18,6 @@ import '../../../res/constants/string.dart';
 import '../../../res/helpers/dialog_helper.dart';
 import '../../home_page/widgets/icon_widgets.dart';
 import '../../requirement/requirement_owner_details.dart';
-import '../../sharing/sharing_screen.dart';
 import '../timiline_components.dart';
 
 class UserProfilePage extends StatefulWidget {
@@ -33,41 +34,41 @@ class _UserProfilePageState extends State<UserProfilePage> {
   @override
   void initState() {
     super.initState();
-    _postsFuture = fetchPosts();
+    // _postsFuture = fetchPosts();
   }
 
-  Future<List<Post>> fetchPosts() async {
-    return [
-      Post(
-        username: 'Christopher Nolan',
-        time: 'Just a moment ago',
-        postImg: CustomImageAsset.back,
-        profileImage: CustomImageAsset.thumb,
-        description: 'Dynamic post from backend!',
-      ),
-      Post(
-        username: 'Ankit Patel',
-        profileImage: CustomImageAsset.splashScreenImg,
-        time: '5 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.splashScreenImg,
-      ),
-      Post(
-        username: 'Anurag Singh',
-        profileImage: CustomImageAsset.star,
-        time: '15 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.dynamic,
-      ),
-      Post(
-        username: 'Archi',
-        profileImage: CustomImageAsset.splashScreenImg,
-        time: '5 minutes ago',
-        description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.splashScreenImg,
-      ),
-    ];
-  }
+  // Future<List<Post>> fetchPosts() async {
+  //   return [
+  //     Post(
+  //       username: 'Christopher Nolan',
+  //       time: 'Just a moment ago',
+  //       postImg: CustomImageAsset.back,
+  //       profileImage: CustomImageAsset.thumb,
+  //       description: 'Dynamic post from backend!',
+  //     ),
+  //     Post(
+  //       username: 'Ankit Patel',
+  //       profileImage: CustomImageAsset.splashScreenImg,
+  //       time: '5 minutes ago',
+  //       description: 'Learning Flutter, it’s awesome.',
+  //       postImg: CustomImageAsset.splashScreenImg,
+  //     ),
+  //     Post(
+  //       username: 'Anurag Singh',
+  //       profileImage: CustomImageAsset.star,
+  //       time: '15 minutes ago',
+  //       description: 'Learning Flutter, it’s awesome.',
+  //       postImg: CustomImageAsset.dynamic,
+  //     ),
+  //     Post(
+  //       username: 'Archi',
+  //       profileImage: CustomImageAsset.splashScreenImg,
+  //       time: '5 minutes ago',
+  //       description: 'Learning Android, it’s awesome.',
+  //       postImg: CustomImageAsset.splashScreenImg,
+  //     ),
+  //   ];
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -191,21 +192,43 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                     ),
                                   ),
                                   const SizedBox(width: 8),
-                                  IconButton(
-                                    style: IconButton.styleFrom(
-                                      minimumSize: const Size(30, 30),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(10),
+                                  InkWell(
+                                    onDoubleTap: () {
+                                      Get.to(() => DonationPage(),
+                                          binding: DonationBinding());
+                                    },
+                                    child: Container(
+                                      decoration: const BoxDecoration(
+                                        borderRadius: BorderRadius.all(
+                                            Radius.circular(10)),
+                                        color: Colors.white,
                                       ),
-                                      backgroundColor: Colors.white,
-                                      padding: EdgeInsets.zero,
+                                      child: const Center(
+                                        child: Padding(
+                                          padding: EdgeInsets.only(
+                                              left: 10.0,
+                                              right: 10,
+                                              top: 3,
+                                              bottom: 3),
+                                          child: Column(
+                                            children: [
+                                              Icon(
+                                                Icons
+                                                    .volunteer_activism_rounded,
+                                                color: Colors.green,
+                                              ),
+                                              Text(
+                                                "Donate",
+                                                style: TextStyle(
+                                                    color: Color.fromARGB(
+                                                        255, 9, 140, 13)),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
-                                    icon: const Icon(
-                                      Icons.arrow_drop_down_circle_outlined,
-                                      size: 18,
-                                    ),
-                                    onPressed: () {},
-                                  ),
+                                  )
                                 ],
                               ),
                             ],
