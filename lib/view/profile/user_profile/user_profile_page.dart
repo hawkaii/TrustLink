@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'package:trustlink/res/constants/colors.dart';
 import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import 'package:trustlink/res/extensions/widget_extensions.dart';
@@ -11,7 +10,6 @@ import 'package:trustlink/view/chat_screen/chat_list_page.dart';
 import 'package:trustlink/view/profile/donation/dontation_page/don_binding.dart';
 import 'package:trustlink/view/profile/donation/dontation_page/donation_page.dart';
 import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
-import 'package:trustlink/view/requirement/requirement_screen.dart';
 
 import '../../../models/home/user_model.dart';
 import '../../../res/assets/image_assets.dart';
@@ -36,6 +34,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
   @override
   void initState() {
     super.initState();
+
     // _postsFuture = fetchPosts();
   }
 
@@ -195,8 +194,8 @@ class _UserProfilePageState extends State<UserProfilePage> {
                                   ),
                                   const SizedBox(width: 8),
                                   InkWell(
-                                    onDoubleTap: () {
-                                      Get.to(() => DonationPage(),
+                                    onTap: () {
+                                      Get.to(() => const DonationPage(),
                                           binding: DonationBinding());
                                     },
                                     child: Container(
