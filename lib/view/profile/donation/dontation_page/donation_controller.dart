@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/view/profile/donation/donatin_sucess/don_sucess.dart';
+import 'package:trustlink/view/profile/donation/donatin_sucess/don_sucess.dart';
 
 class DonationController extends GetxController {
   final amountController = TextEditingController();

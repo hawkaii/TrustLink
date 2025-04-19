@@ -8,6 +8,8 @@ import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import 'package:trustlink/res/extensions/widget_extensions.dart';
 import 'package:trustlink/res/widgets/requirment_card.dart';
 import 'package:trustlink/view/chat_screen/chat_list_page.dart';
+import 'package:trustlink/view/profile/donation/dontation_page/don_binding.dart';
+import 'package:trustlink/view/profile/donation/dontation_page/donation_page.dart';
 import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
 import 'package:trustlink/view/requirement/requirement_screen.dart';
 
