@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/get_navigation.dart';
-import 'package:tienext/res/assets/image_assets.dart';
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/constants/string.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/home_page/widgets/icon_widgets.dart';
-import 'package:tienext/view/requirement/requirement_owner_details.dart';
+import 'package:trustlink/res/assets/image_assets.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/constants/string.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/home_page/widgets/icon_widgets.dart';
+import 'package:trustlink/view/requirement/requirement_owner_details.dart';
 
 class RequirementCard extends StatelessWidget {
   final double screenWidth;

@@ -2,7 +2,7 @@ import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/constants/buttom_nav.dart';
+import 'package:trustlink/res/constants/buttom_nav.dart';
 import '../network/api_url/api_url.dart';
 import '../res/builders/loader_builder.dart';
 import '../view/auth/signup/signup_verification.dart';
@@ -82,7 +82,8 @@ class AuthProvider with ChangeNotifier {
   }
 
   static Future<dynamic> login({
-    required String email, required String password,
+    required String email,
+    required String password,
     required BuildContext context,
   }) async {
     final loader = LoaderBuilder(context: context);
@@ -90,7 +91,8 @@ class AuthProvider with ChangeNotifier {
     try {
       loader.showLoader(title: "Login...");
       Map<String, dynamic> data = {
-        "identifier": email, "password": password,
+        "identifier": email,
+        "password": password,
       };
       Map<String, String> headers = {
         'Content-Type': 'application/json',
@@ -103,7 +105,7 @@ class AuthProvider with ChangeNotifier {
       if (response.statusCode == 201 || response.statusCode == 200) {
         loader.dismissLoader();
         log("Response data : ${response.data}");
-        Get.offAll(() => const  ButtonNavigation());
+        Get.offAll(() => const ButtonNavigation());
         return response;
       }
     } on DioException catch (e) {
@@ -126,8 +128,7 @@ class AuthProvider with ChangeNotifier {
     return null;
   }
 
-
- static checkAuthStatus(String token) async {
+  static checkAuthStatus(String token) async {
     try {
       final response = await dio.get(
         ApiEndpoints.authStatus,

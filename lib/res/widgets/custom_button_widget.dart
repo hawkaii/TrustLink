@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 
 class CustomButton extends StatelessWidget {
   final String text;
@@ -25,8 +25,8 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: context.fullHeight*0.06,
-      width: context.fullWidth*0.5,
+      height: context.fullHeight * 0.06,
+      width: context.fullWidth * 0.5,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.btnColor,

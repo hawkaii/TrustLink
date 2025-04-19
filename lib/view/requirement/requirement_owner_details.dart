@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/colors.dart';
 import '../../res/constants/string.dart';

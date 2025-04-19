@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:tienext/res/constants/string.dart';
-import 'package:tienext/res/extensions/int_extensions.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/extensions/validation_extensions.dart';
-import 'package:tienext/res/widgets/custom_button_widget.dart';
-import 'package:tienext/res/widgets/custom_text_field.dart';
-import 'package:tienext/view/auth/signup/signup_2.dart';
-import 'package:tienext/view/setting/privacy_policy.dart';
+import 'package:trustlink/res/constants/string.dart';
+import 'package:trustlink/res/extensions/int_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/validation_extensions.dart';
+import 'package:trustlink/res/widgets/custom_button_widget.dart';
+import 'package:trustlink/res/widgets/custom_text_field.dart';
+import 'package:trustlink/view/auth/signup/signup_2.dart';
+import 'package:trustlink/view/setting/privacy_policy.dart';
 import '../../../provider/auth_provider.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/builders/date_time_builder.dart';
@@ -58,7 +58,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
             children: [
               SizedBox(height: context.fullHeight * 0.05),
               Image.asset(
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.03),
@@ -160,17 +160,23 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                     "All fields are required".showToast();
                     return;
                   }
-                  final dob = DateTime.parse(controller.selectedDateOfBirth.value);
+                  final dob =
+                      DateTime.parse(controller.selectedDateOfBirth.value);
                   final currentDate = DateTime.now();
-                  final age = currentDate.year - dob.year -
+                  final age = currentDate.year -
+                      dob.year -
                       ((currentDate.month < dob.month ||
-                          (currentDate.month == dob.month && currentDate.day < dob.day)) ? 1 : 0);
+                              (currentDate.month == dob.month &&
+                                  currentDate.day < dob.day))
+                          ? 1
+                          : 0);
                   if (age < 12) {
-                    "You must be at least 12 years old to create an account.".showToast();
+                    "You must be at least 12 years old to create an account."
+                        .showToast();
                     return;
                   }
                   Get.to(
-                        () => SignUpScreen2(
+                    () => SignUpScreen2(
                       email: emailPhoneController.text,
                       password: passwordController.text,
                       fullName: fullNameController.text,
@@ -188,7 +194,7 @@ class _SignUpScreen1State extends State<SignUpScreen1> {
                 },
                 child: Text.rich(
                   TextSpan(
-                    text: kAgreeTienext,
+                    text: kAgreetrustlink,
                     style: AppTextTheme.bodySmall,
                     children: [
                       const TextSpan(

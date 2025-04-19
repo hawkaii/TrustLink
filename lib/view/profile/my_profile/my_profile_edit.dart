@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:image_picker/image_picker.dart'; // Import the image_picker package
 import 'dart:io';
 
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/helpers/dialog_helper.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/helpers/dialog_helper.dart';
 
 import '../../../res/assets/image_assets.dart'; // For File type
 
@@ -105,7 +105,7 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               const CircleAvatar(
                                 radius: 40,
                                 backgroundImage: AssetImage(
-                                  CustomImageAsset.ankitDp,
+                                  CustomImageAsset.splashScreenImg,
                                 ),
                               ),
                               Row(
@@ -207,7 +207,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Name');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Name');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -229,7 +230,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'UserName');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'UserName');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -265,7 +267,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Work Role');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Work Role');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -299,7 +302,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                               ),
                               InkWell(
                                 onTap: () {
-                                  AppDialogHelper().showEditDialog(context, 'Location');
+                                  AppDialogHelper()
+                                      .showEditDialog(context, 'Location');
                                 },
                                 child: const Icon(
                                   Icons.edit,
@@ -336,7 +340,8 @@ class _MyProfileEditState extends State<MyProfileEdit> {
                             )),
                         InkWell(
                           onTap: () {
-                            AppDialogHelper().showEditDialog(context, 'Location');
+                            AppDialogHelper()
+                                .showEditDialog(context, 'Location');
                           },
                           child: const Icon(
                             Icons.edit,

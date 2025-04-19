@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/extensions/validation_extensions.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/auth/reset_password/forget_password.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/validation_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/auth/reset_password/forget_password.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/buttom_nav.dart';
 import '../../../res/constants/colors.dart';
@@ -37,7 +37,7 @@ class _ChangePasswordState extends State<ChangePassword> {
               SizedBox(height: size.height * 0.08),
               Image.asset(
                 height: context.fullHeight * 0.06,
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.03),

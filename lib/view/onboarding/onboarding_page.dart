@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:tienext/res/extensions/int_extensions.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/auth/login/login_page.dart';
-import 'package:tienext/view/auth/signup/signup_1.dart';
-import 'package:tienext/view/onboarding/widget/button_widget.dart';
+import 'package:trustlink/res/extensions/int_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/auth/login/login_page.dart';
+import 'package:trustlink/view/auth/signup/signup_1.dart';
+import 'package:trustlink/view/onboarding/widget/button_widget.dart';
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/colors.dart';
 import '../../res/constants/string.dart';
@@ -59,7 +59,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     context: context,
                     text: kSignup,
                     color: AppColors.onBoardingBtnColor2,
-                    onTap: () =>  const SignUpScreen1().getPush(),
+                    onTap: () => const SignUpScreen1().getPush(),
                   ),
                   20.height,
                   onBoardingBtn(
@@ -67,7 +67,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     text: kLogin,
                     color: AppColors.black,
                     textColor: AppColors.white,
-                    onTap: () =>  const LoginScreen().getPush(),
+                    onTap: () => const LoginScreen().getPush(),
                   ),
                 ],
               ).paddingSymmetric(horizontal: 16),

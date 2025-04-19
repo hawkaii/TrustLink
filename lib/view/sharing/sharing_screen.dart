@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tienext/res/assets/image_assets.dart';
+import 'package:trustlink/res/assets/image_assets.dart';
 
 import '../auth/signup/controller/signup1_controller.dart';
 
@@ -420,8 +420,8 @@ class _SharingScreenState extends State<SharingScreen> {
     final List<String> imagePaths = [
       CustomImageAsset.mountains,
       CustomImageAsset.kishorSinger,
-      CustomImageAsset.archiPost,
-      CustomImageAsset.ankit,
+      CustomImageAsset.splashScreenImg,
+      CustomImageAsset.splashScreenImg,
     ];
 
     return SizedBox(

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/assets/image_assets.dart';
+import 'package:trustlink/res/assets/image_assets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 
 import 'buttom_nav.dart';
 
@@ -210,8 +210,8 @@ class ShareBottomSheet extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: width * 0.08,
-                    backgroundImage: const AssetImage(
-                        CustomImageAsset.ankitDp),
+                    backgroundImage:
+                        const AssetImage(CustomImageAsset.splashScreenImg),
                   ),
                   const SizedBox(height: 8),
                   const Text(
@@ -227,7 +227,7 @@ class ShareBottomSheet extends StatelessWidget {
             onTap: () {
               Clipboard.setData(const ClipboardData(
                   text:
-                      "https://www.tienext.com/activity-195h3732h329/?p=activity"));
+                      "https://www.trustlink.com/activity-195h3732h329/?p=activity"));
               ScaffoldMessenger.of(context).showSnackBar(
                 const SnackBar(content: Text('Link copied to clipboard!')),
               );
@@ -260,7 +260,7 @@ class ShareBottomSheet extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          "https://www.tienext.com/activity-195h3732h329/?p=activity",
+                          "https://www.trustlink.com/activity-195h3732h329/?p=activity",
                           overflow: TextOverflow.ellipsis,
                         ),
                       ),
@@ -274,13 +274,10 @@ class ShareBottomSheet extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              _buildShareIcon(
-                  context, CustomImageAsset.whatsapp, 'WhatsApp'),
-              _buildShareIcon(
-                  context, CustomImageAsset.messages, 'Messages'),
+              _buildShareIcon(context, CustomImageAsset.whatsapp, 'WhatsApp'),
+              _buildShareIcon(context, CustomImageAsset.messages, 'Messages'),
               _buildShareIcon(context, CustomImageAsset.threads, 'Threads'),
-              _buildShareIcon(
-                  context, CustomImageAsset.facebook, 'Facebook'),
+              _buildShareIcon(context, CustomImageAsset.facebook, 'Facebook'),
             ],
           ),
           const SizedBox(height: 16),
@@ -369,7 +366,7 @@ class MentionedBottomSheet extends StatelessWidget {
                     CircleAvatar(
                       radius: 40,
                       backgroundImage: AssetImage(
-                        CustomImageAsset.archi,
+                        CustomImageAsset.splashScreenImg,
                       ),
                     ),
                     SizedBox(height: 8),

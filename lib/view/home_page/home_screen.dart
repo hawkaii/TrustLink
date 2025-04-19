@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/view/home_page/search_screen.dart';
-import 'package:tienext/view/home_page/widgets/icon_widgets.dart';
-import 'package:tienext/view/home_page/widgets/post_widgets.dart';
-import 'package:tienext/view/profile/user_profile/widgets/moments_item.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/view/home_page/search_screen.dart';
+import 'package:trustlink/view/home_page/widgets/icon_widgets.dart';
+import 'package:trustlink/view/home_page/widgets/post_widgets.dart';
+import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
 import '../../models/home/user_model.dart';
 import '../../res/assets/image_assets.dart';
 import '../setting/setting_screen.dart';
@@ -38,10 +38,10 @@ class _HomePageState extends State<HomePage> {
       ),
       Post(
         username: 'Ankit Patel',
-        profileImage: CustomImageAsset.ankitDp,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.ankit,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
       Post(
         username: 'Anurag Singh',
@@ -52,10 +52,10 @@ class _HomePageState extends State<HomePage> {
       ),
       Post(
         username: 'Archi',
-        profileImage: CustomImageAsset.archi,
+        profileImage: CustomImageAsset.splashScreenImg,
         time: '5 minutes ago',
         description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.archiPost,
+        postImg: CustomImageAsset.splashScreenImg,
       ),
     ];
   }
@@ -151,12 +151,14 @@ Widget buildTodayMoments() {
     scrollDirection: Axis.horizontal,
     child: Row(
       children: [
-        momentItem(CustomImageAsset.archi, CustomImageAsset.star),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.heartyMoment),
-        momentItem(CustomImageAsset.archi, CustomImageAsset.thumb),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.questionMark),
-        momentItem(CustomImageAsset.archi, CustomImageAsset.onePlus),
-        momentItem(CustomImageAsset.ankitDp, CustomImageAsset.namaste),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+        momentItem(
+            CustomImageAsset.splashScreenImg, CustomImageAsset.heartyMoment),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
+        momentItem(
+            CustomImageAsset.splashScreenImg, CustomImageAsset.questionMark),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+        momentItem(CustomImageAsset.splashScreenImg, CustomImageAsset.namaste),
       ],
     ),
   );

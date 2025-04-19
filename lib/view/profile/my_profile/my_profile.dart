@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/setting/setting_screen.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/setting/setting_screen.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/custom_dialog.dart';
 import '../../../res/constants/string.dart';
@@ -12,7 +12,7 @@ import '../../home_page/comment_screen.dart';
 import '../../home_page/widgets/icon_widgets.dart';
 import '../../requirement/requirement_owner_details.dart';
 import '../timiline_components.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 import 'my_profile_edit.dart';
 
 class MyProfilePage extends StatefulWidget {
@@ -374,14 +374,18 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          _buildMomentItem(CustomImageAsset.archi, CustomImageAsset.star),
           _buildMomentItem(
-              CustomImageAsset.ankitDp, CustomImageAsset.heartyMoment),
-          _buildMomentItem(CustomImageAsset.archi, CustomImageAsset.thumb),
+              CustomImageAsset.splashScreenImg, CustomImageAsset.star),
           _buildMomentItem(
-              CustomImageAsset.ankitDp, CustomImageAsset.questionMark),
-          _buildMomentItem(CustomImageAsset.archi, CustomImageAsset.onePlus),
-          _buildMomentItem(CustomImageAsset.ankitDp, CustomImageAsset.namaste),
+              CustomImageAsset.splashScreenImg, CustomImageAsset.heartyMoment),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.questionMark),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.namaste),
         ],
       ),
     );
@@ -392,9 +396,12 @@ class _MomentsSectionState extends State<MomentsSection> {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          _buildMomentItem(CustomImageAsset.archi, CustomImageAsset.star),
-          _buildMomentItem(CustomImageAsset.ankitDp, CustomImageAsset.onePlus),
-          _buildMomentItem(CustomImageAsset.ankitDp, CustomImageAsset.thumb),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.star),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.onePlus),
+          _buildMomentItem(
+              CustomImageAsset.splashScreenImg, CustomImageAsset.thumb),
         ],
       ),
     );
@@ -663,14 +670,14 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
     return Column(
       children: [
         _buildActivityItem(
-          profileImage: CustomImageAsset.archi,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Archi Maze',
           time: '4 hours ago',
           description:
               'The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.',
         ),
         _buildActivityItem(
-          profileImage: CustomImageAsset.ankitDp,
+          profileImage: CustomImageAsset.splashScreenImg,
           username: 'Ankit Patel',
           time: '6 hours ago',
           description: 'Another activity description.',
@@ -842,7 +849,8 @@ class BuildRequirementsItems extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(child: Image.asset(CustomImageAsset.ankitDp)
+                CircleAvatar(
+                    child: Image.asset(CustomImageAsset.splashScreenImg)
                     // radius: 24,
                     // backgroundImage: NetworkImage(
                     //   "https://via.placeholder.com/150",

@@ -208,7 +208,7 @@ class _ChatDetailsScreenState extends State<ChatDetailsScreen> {
                         const ChatBubbles(
                           message:
                               "Lorem Ipsum is a text for use in graphic in graphic.",
-                          link: "tienext.com",
+                          link: "trustlink.com",
                           time: "2 days ago",
                         ),
                       ],

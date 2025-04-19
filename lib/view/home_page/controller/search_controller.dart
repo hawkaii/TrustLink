@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import '../../../models/home/user_model.dart';
 import '../../../res/assets/image_assets.dart';
 
-
 class SearchControllers extends GetxController {
   // Original list of users
   final users = <User>[
@@ -11,7 +10,7 @@ class SearchControllers extends GetxController {
       name: 'Ankit Patel',
       role: 'Flutter Developer',
       location: 'Patna Bihar Saran',
-      imageUrl: CustomImageAsset.ankitDp,
+      imageUrl: CustomImageAsset.splashScreenImg,
     ),
     User(
       name: 'Anurag Singh',
@@ -23,7 +22,7 @@ class SearchControllers extends GetxController {
       name: 'Archi Maze',
       role: 'Entrepreneur',
       location: 'Noida, Sector-18',
-      imageUrl: CustomImageAsset.archi,
+      imageUrl: CustomImageAsset.splashScreenImg,
     ),
     User(
       name: 'Cristopher\nNolen',
@@ -53,7 +52,7 @@ class SearchControllers extends GetxController {
       name: 'John Golfer',
       role: 'Entrepreneur',
       location: 'Noida, Sector-18',
-      imageUrl: CustomImageAsset.ankitDp,
+      imageUrl: CustomImageAsset.splashScreenImg,
     ),
     User(
       name: 'ANjali',
@@ -95,7 +94,8 @@ class SearchControllers extends GetxController {
     } else {
       // Filter users by name, case-insensitive
       filteredUsers.assignAll(
-        users.where((user) => user.name.toLowerCase().contains(query.toLowerCase())),
+        users.where(
+            (user) => user.name.toLowerCase().contains(query.toLowerCase())),
       );
     }
   }
