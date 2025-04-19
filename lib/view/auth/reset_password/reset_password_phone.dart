@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/view/auth/reset_password/reset_password_email.dart';
-import 'package:tienext/view/auth/signup/phone_otp_screen.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/view/auth/reset_password/reset_password_email.dart';
+import 'package:trustlink/view/auth/signup/phone_otp_screen.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/colors.dart';
 import '../../../res/constants/string.dart';
@@ -31,7 +31,7 @@ class _ResetPasswordPhoneState extends State<ResetPasswordPhone> {
               SizedBox(height: context.fullHeight * 0.08),
               Image.asset(
                 height: context.fullHeight * 0.06,
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.03),

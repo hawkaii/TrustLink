@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/colors.dart';
@@ -8,7 +8,6 @@ import '../../../res/constants/string.dart';
 import '../../../res/constants/text_theme.dart';
 import '../../../res/widgets/custom_button_widget.dart';
 import '../../home_page/interested_screen.dart';
-
 
 class SignupVerification extends StatefulWidget {
   const SignupVerification({super.key});
@@ -29,7 +28,7 @@ class _SignupVerificationState extends State<SignupVerification> {
             children: [
               SizedBox(height: context.fullHeight * 0.08),
               Image.asset(
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.04),

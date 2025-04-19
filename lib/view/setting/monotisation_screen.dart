@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/int_extensions.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/int_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
 
 import '../../res/assets/image_assets.dart';
 import '../../res/constants/colors.dart';
@@ -46,7 +46,7 @@ class _MonetizationScreenState extends State<MonetizationScreen> {
             SizedBox(height: context.fullHeight * 0.01),
             const Text(
               textAlign: TextAlign.center,
-              "Tienext 68 days monetization challenge let’s you find your",
+              "trustlink 68 days monetization challenge let’s you find your",
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             ),
             const Text(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/view/home_page/search_screen.dart';
-import 'package:tienext/view/home_page/widgets/icon_widgets.dart';
-import 'package:tienext/view/home_page/widgets/post_widgets.dart';
-import 'package:tienext/view/profile/user_profile/widgets/moments_item.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/view/home_page/search_screen.dart';
+import 'package:trustlink/view/home_page/widgets/icon_widgets.dart';
+import 'package:trustlink/view/home_page/widgets/post_widgets.dart';
+import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
 import '../../models/home/user_model.dart';
 import '../../res/assets/image_assets.dart';
 import '../setting/setting_screen.dart';

@@ -1,6 +1,6 @@
 class CustomImageAsset {
   static const String onBoardingBgImage = 'assets/images/onBoardingBg_img.png';
-  static const String logoTieNextImage = 'assets/images/logoname.png';
+  static const String logotrustlinkImage = 'assets/images/logoname.png';
   static const String monetization = 'assets/images/monotisation.png';
   static const String heartyMoment = 'assets/images/hearty.png';
   static const String namaste = 'assets/images/namskar.png';

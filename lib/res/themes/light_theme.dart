@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tienext/res/extensions/outline_boader_extensions.dart';
+import 'package:trustlink/res/extensions/outline_boader_extensions.dart';
 import '../constants/colors.dart';
 
 final ThemeData lightTheme = ThemeData(

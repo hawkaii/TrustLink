@@ -1,8 +1,8 @@
 // import 'package:flutter/material.dart';
 // import 'package:simple_floating_bottom_nav_bar/floating_bottom_nav_bar.dart';
 // import 'package:simple_floating_bottom_nav_bar/floating_item.dart';
-// import 'package:tienext/view/requirement/requirement_screen.dart';
-// import 'package:tienext/view/sharing/sharing_screen.dart';
+// import 'package:trustlink/view/requirement/requirement_screen.dart';
+// import 'package:trustlink/view/sharing/sharing_screen.dart';
 // import '../chat_screen/chat_list_page.dart';
 // import '../home_page/home_screen.dart';
 // import '../profile/user_profile/user_profile_page.dart';

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/view/auth/reset_password/change_password.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/view/auth/reset_password/change_password.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/colors.dart';
 import '../../../res/constants/string.dart';
@@ -28,7 +28,7 @@ class OTPScreen extends StatelessWidget {
                 children: [
                   Image.asset(
                     height: context.fullHeight * 0.06,
-                    CustomImageAsset.logoTieNextImage,
+                    CustomImageAsset.logotrustlinkImage,
                     fit: BoxFit.contain,
                   ),
                   SizedBox(height: context.height * 0.02),

@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
 import '../../res/assets/image_assets.dart';
 import '../onboarding/onboarding_page.dart';
-
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -40,9 +39,9 @@ class _SplashScreenState extends State<SplashScreen> {
 //
 // import 'package:flutter/material.dart';
 // import 'package:get/get.dart';
-// import 'package:tienext/res/constants/buttom_nav.dart';
-// import 'package:tienext/res/extensions/media_query_extensions.dart';
-// import 'package:tienext/res/extensions/widget_extensions.dart';
+// import 'package:trustlink/res/constants/buttom_nav.dart';
+// import 'package:trustlink/res/extensions/media_query_extensions.dart';
+// import 'package:trustlink/res/extensions/widget_extensions.dart';
 // import '../../provider/auth_provider.dart';
 // import '../../res/assets/image_assets.dart';
 // import '../onboarding/onboarding_page.dart';

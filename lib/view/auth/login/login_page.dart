@@ -2,12 +2,12 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
-import 'package:tienext/res/constants/string.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/extensions/validation_extensions.dart';
-import 'package:tienext/res/extensions/widget_extensions.dart';
-import 'package:tienext/view/auth/reset_password/reset_password_email.dart';
-import 'package:tienext/view/auth/signup/signup_1.dart';
+import 'package:trustlink/res/constants/string.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/extensions/validation_extensions.dart';
+import 'package:trustlink/res/extensions/widget_extensions.dart';
+import 'package:trustlink/view/auth/reset_password/reset_password_email.dart';
+import 'package:trustlink/view/auth/signup/signup_1.dart';
 import '../../../provider/auth_provider.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/text_theme.dart';
@@ -45,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: context.fullHeight * 0.08),
               Image.asset(
                 height: context.fullHeight * 0.06,
-                CustomImageAsset.logoTieNextImage,
+                CustomImageAsset.logotrustlinkImage,
                 fit: BoxFit.contain,
               ),
               SizedBox(height: context.fullHeight * 0.04),
@@ -78,7 +78,7 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               SizedBox(height: context.fullHeight * 0.02),
               const Text(kForgetPass, style: AppTextTheme.forgotPassword).onTap(
-                    () => Get.to(const ResetPasswordEmail()),
+                () => Get.to(const ResetPasswordEmail()),
               ),
               SizedBox(height: context.fullHeight * 0.032),
               CustomButton(

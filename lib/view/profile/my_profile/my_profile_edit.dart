@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 // import 'package:image_picker/image_picker.dart'; // Import the image_picker package
 import 'dart:io';
 
-import 'package:tienext/res/constants/colors.dart';
-import 'package:tienext/res/extensions/media_query_extensions.dart';
-import 'package:tienext/res/helpers/dialog_helper.dart';
+import 'package:trustlink/res/constants/colors.dart';
+import 'package:trustlink/res/extensions/media_query_extensions.dart';
+import 'package:trustlink/res/helpers/dialog_helper.dart';
 
 import '../../../res/assets/image_assets.dart'; // For File type
 

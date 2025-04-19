@@ -1,4 +1,4 @@
-package com.example.tienext
+package com.example.trustlink
 
 import io.flutter.embedding.android.FlutterActivity
 
