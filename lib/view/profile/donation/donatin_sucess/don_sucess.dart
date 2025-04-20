@@ -31,17 +31,38 @@ class DonationSuccessPage extends StatelessWidget {
                 style: TextStyle(fontSize: 16),
               ),
               const SizedBox(height: 30),
-              ElevatedButton(
-                onPressed: () {
-                  Get.to(() => const TransactionDetailsPage());
-                },
-                child: const Text(
-                  "Back to Donate",
-                  style: TextStyle(
-                    color: Colors.black,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.back();
+                      Get.back();
+                      Get.back();
+                    },
+                    child: const Text(
+                      "Back",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
                   ),
-                ),
-              ),
+                  const SizedBox(
+                    width: 20,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Get.to(() => const TransactionDetailsPage());
+                    },
+                    child: const Text(
+                      "View tranjection",
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),

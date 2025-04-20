@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:trustlink/res/assets/image_assets.dart';
 
 class TransactionDetailsPage extends StatelessWidget {
   const TransactionDetailsPage({super.key});
@@ -30,16 +31,16 @@ class TransactionDetailsPage extends StatelessWidget {
                 ),
                 SizedBox(width: 6),
                 Text(
-                  "Chirpy Chick",
+                  "Parthib Mukharjee",
                   style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ],
             ),
             SizedBox(height: 4),
-            Text(
-              "0x07D9...51C8",
-              style: TextStyle(color: Colors.grey, fontSize: 12),
-            ),
+            // Text(
+            //   "0x07D9...51C8",
+            //   style: TextStyle(color: Colors.grey, fontSize: 12),
+            // ),
           ],
         ),
         actions: const [
@@ -48,7 +49,7 @@ class TransactionDetailsPage extends StatelessWidget {
             child: Center(
               child: Text(
                 "Sepolia",
-                style: TextStyle(color: Colors.grey, fontSize: 13),
+                style: TextStyle(color: Colors.white, fontSize: 13),
               ),
             ),
           )
@@ -106,10 +107,8 @@ class TransactionDetailsPage extends StatelessWidget {
               child: const Row(
                 children: [
                   CircleAvatar(
-                    radius: 18,
-                    backgroundImage: NetworkImage(
-                        "https://seeklogo.com/vector-logo/610287/starknet-strk-icon"), // replace with local asset if needed
-                  ),
+                      radius: 25,
+                      backgroundImage: AssetImage(CustomImageAsset.starknet)),
                   SizedBox(width: 12),
                   Expanded(
                     child: Text(
