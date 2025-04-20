@@ -21,6 +21,9 @@ TrustLink is a Flutter-based mobile application designed to connect professional
 - **Chat**: Connect and communicate with other users directly through the app.
 - **Requirement Management**: Post and manage requirements for professional or organizational needs.
 
+## Backend
+All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
+
 ## Getting Started
 
 Follow these steps to set up and run the TrustLink app on your local machine:
@@ -32,10 +35,6 @@ Follow these steps to set up and run the TrustLink app on your local machine:
 - A connected device or emulator for testing.
 
 ### Installation
-
-#### Backend
-All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
-
 1. Clone the repository:
    ```bash
    git clone https://github.com/hawkaii/trustlink.git
