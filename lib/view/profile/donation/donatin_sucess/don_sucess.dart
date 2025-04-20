@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:trustlink/view/profile/donation/donatin_sucess/tranjection_sleep.dart';
 
 class DonationSuccessPage extends StatelessWidget {
   const DonationSuccessPage({super.key});
@@ -13,7 +15,10 @@ class DonationSuccessPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Icon(Icons.check_circle, size: 100, color: Colors.green),
+              const SizedBox(
+                height: 20,
+              ),
+              const Icon(Icons.check_circle, size: 200, color: Colors.green),
               const SizedBox(height: 30),
               const Text(
                 "Thank You!",
@@ -27,8 +32,15 @@ class DonationSuccessPage extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               ElevatedButton(
-                onPressed: () => Navigator.pop(context),
-                child: const Text("Back to Donate"),
+                onPressed: () {
+                  Get.to(() => const TransactionDetailsPage());
+                },
+                child: const Text(
+                  "Back to Donate",
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
               ),
             ],
           ),
