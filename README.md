@@ -3,8 +3,6 @@
 <div align="center">
   <img src="./.github/readme-images/logo.png" alt="app icon" width="200">
 </div>
-d
-
 TrustLink is a Flutter-based mobile application designed to connect professionals and organizations by sharing achievements and facilitating donations. It provides a platform for users to showcase their milestones, support causes they care about, and build meaningful connections.
 
 ## Screenshots
