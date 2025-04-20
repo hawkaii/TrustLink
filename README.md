@@ -14,10 +14,7 @@ TrustLink is a Flutter-based mobile application designed to connect professional
   <img src="./.github/readme-images/profile.png" alt="profile" width="150">
   <img src="./.github/readme-images/donation_amount.png" alt="amount" width="150">
   <img src="./.github/readme-images/donation_transcript.png" alt="transcript" width="150">
-
-
 </div>
-
 
 ## Features
 
@@ -30,6 +27,9 @@ TrustLink is a Flutter-based mobile application designed to connect professional
 ## Backend
 All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
 
+### Starknet Integration
+For details on Starknet integration, refer to the [Starknet Instructions](https://github.com/hawkaii/TrustLink_backend/blob/main/starknet_instructions.md).  
+**Note**: There are still issues regarding the implementation. Please review the instructions carefully.
 
 ## Getting Started
 
