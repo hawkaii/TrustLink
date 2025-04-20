@@ -13,6 +13,11 @@ TrustLink is a Flutter-based mobile application designed to connect professional
   <img src="./.github/readme-images/signup.png" alt="signup" width="150">
   <img src="./.github/readme-images/settings.png" alt="settings" width="150">
   <img src="./.github/readme-images/feed.png" alt="feed" width="150">
+  <img src="./.github/readme-images/profile.png" alt="profile" width="150">
+  <img src="./.github/readme-images/donation_amount.png" alt="amount" width="150">
+  <img src="./.github/readme-images/donation_transcript.png" alt="transcript" width="150">
+
+
 </div>
 
 
