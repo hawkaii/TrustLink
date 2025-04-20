@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:trustlink/res/assets/image_assets.dart';
-import 'package:trustlink/view/profile/donation/donatin_sucess/don_sucess.dart';
+import 'package:trustlink/view/profile/donation/donatin_sucess/tranjection_sleep.dart';
 
 class DonationPage extends StatefulWidget {
   const DonationPage({super.key});
@@ -41,7 +41,7 @@ class _DonationPageState extends State<DonationPage> {
               height: 10,
             ),
             const Text(
-              "Anurag singh",
+              "Parthib Mukharjee",
               // "Support our mission by donating any amount.\nYour help matters ❤️",
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 16),
@@ -138,7 +138,7 @@ class _DonationPageState extends State<DonationPage> {
       confirmTextColor: Colors.white,
       onConfirm: () {
         Get.back();
-        Get.to(() => const DonationSuccessPage());
+        Get.to(() => const TransactionDetailsPage());
       },
     );
   }
