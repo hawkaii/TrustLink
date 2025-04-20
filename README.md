@@ -3,15 +3,18 @@
 <div align="center">
   <img src="./.github/readme-images/logo.png" alt="app icon" width="200">
 </div>
+d
 
 TrustLink is a Flutter-based mobile application designed to connect professionals and organizations by sharing achievements and facilitating donations. It provides a platform for users to showcase their milestones, support causes they care about, and build meaningful connections.
 
 ## Screenshots
+
 <div style="display: flex; gap: 20px;">
   <img src="./.github/readme-images/signup.png" alt="signup" width="150">
   <img src="./.github/readme-images/settings.png" alt="settings" width="150">
   <img src="./.github/readme-images/feed.png" alt="feed" width="150">
 </div>
+
 
 ## Features
 
@@ -24,6 +27,7 @@ TrustLink is a Flutter-based mobile application designed to connect professional
 ## Backend
 All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
 
+
 ## Getting Started
 
 Follow these steps to set up and run the TrustLink app on your local machine:
@@ -35,6 +39,7 @@ Follow these steps to set up and run the TrustLink app on your local machine:
 - A connected device or emulator for testing.
 
 ### Installation
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/hawkaii/trustlink.git
