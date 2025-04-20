@@ -19,9 +19,9 @@ TODO:
 ## Screenshots
 TODO: Add screenshots and a demo video.
 <div style="display: flex; gap: 20px;">
-  <img src="./.github/readme-images/signup.png" alt="signup" width="100">
-  <img src="./.github/readme-images/settings.png" alt="settings" width="100">
-  <img src="./.github/readme-images/feed.png" alt="feed" width="100">
+  <img src="./.github/readme-images/signup.png" alt="signup" width="150">
+  <img src="./.github/readme-images/settings.png" alt="settings" width="150">
+  <img src="./.github/readme-images/feed.png" alt="feed" width="150">
 </div>
 
 ## Getting Started
