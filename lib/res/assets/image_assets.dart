@@ -31,6 +31,8 @@ class CustomImageAsset {
   static const String search = 'assets/images/svg/search.svg';
   static const String menu = 'assets/images/svg/menu.svg';
   static const String back = 'assets/images/back.png';
+  static const String starknet = 'assets/images/starknet.png';
+
   static const String shareArrow = 'assets/images/svg/share_arrow.svg';
   static const String splashScreenImg = 'assets/images/splash_img.png';
   static const String threads = 'assets/images/svg/threads.svg';
