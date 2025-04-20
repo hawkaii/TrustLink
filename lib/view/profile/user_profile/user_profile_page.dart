@@ -128,7 +128,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               const CircleAvatar(
                                 radius: 40,
                                 backgroundImage: AssetImage(
-                                  CustomImageAsset.splashScreenImg,
+                                  CustomImageAsset.mountains,
                                 ),
                               ),
                               Row(
@@ -237,7 +237,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           const SizedBox(height: 16),
                           // Name
                           Text(
-                            'Ankit Patel',
+                            'Parthib Mukharjee',
                             style: GoogleFonts.inter(
                               fontSize: 16,
                               fontWeight: FontWeight.w600,
@@ -246,7 +246,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                           ),
 
                           Text(
-                            'Id:- patel.ankit_07',
+                            'Id:- prth.mukharjee_07',
                             style: GoogleFonts.inter(
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
@@ -264,7 +264,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Flutter Developer',
+                                'Backend Developer',
                                 style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -283,7 +283,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
                               ),
                               const SizedBox(width: 8),
                               Text(
-                                'Patna,Bihar(Saran)',
+                                'Kharaghpur,WB',
                                 style: GoogleFonts.inter(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -406,7 +406,7 @@ class _MomentsSectionState extends State<MomentsSection> {
                     borderRadius: BorderRadius.circular(5))),
             onPressed: () {},
             child: Text(
-              "Attached link \nhttp://muziplex.com/re...",
+              "Attached link \nhttp://trustlink.com/re...",
               style:
                   GoogleFonts.inter(fontWeight: FontWeight.w500, fontSize: 12),
             )),
@@ -626,7 +626,7 @@ class _ActivitiesSectionState extends State<ActivitiesSection> {
       children: [
         _buildActivityItem(
           profileImage: CustomImageAsset.splashScreenImg,
-          username: 'Archi Maze',
+          username: 'Parthib Mukharjee',
           time: '4 hours ago',
           postImg: CustomImageAsset.splashScreenImg,
           description: 'This is a sample activity description.',
