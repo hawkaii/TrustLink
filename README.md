@@ -1,11 +1,21 @@
 # ![app icon](./.github/readme-images/logo_small.png) TrustLink
 
-![app icon](./.github/readme-images/logo.png)
+<div align="center">
+  <img src="./.github/readme-images/logo.png" alt="app icon" width="200">
+</div>
+d
 
 TrustLink is a Flutter-based mobile application designed to connect professionals and organizations by sharing achievements and facilitating donations. It provides a platform for users to showcase their milestones, support causes they care about, and build meaningful connections.
 
 ## Screenshots
-TODO:
+
+<div style="display: flex; gap: 20px;">
+  <img src="./.github/readme-images/signup.png" alt="signup" width="150">
+  <img src="./.github/readme-images/settings.png" alt="settings" width="150">
+  <img src="./.github/readme-images/feed.png" alt="feed" width="150">
+</div>
+
+
 ## Features
 
 - **User Profiles**: Create and customize your profile to showcase your professional achievements.
@@ -14,11 +24,9 @@ TODO:
 - **Chat**: Connect and communicate with other users directly through the app.
 - **Requirement Management**: Post and manage requirements for professional or organizational needs.
 
-## Screenshots
-TODO: Add screenshots and a demo video.
-![signup](./.github/readme-images/signup.png)
-![settings](./.github/readme-images/settings.png)
-![feed](./.github/readme-images/feed.png)
+## Backend
+All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
+
 
 ## Getting Started
 
@@ -31,9 +39,6 @@ Follow these steps to set up and run the TrustLink app on your local machine:
 - A connected device or emulator for testing.
 
 ### Installation
-
-#### Backend
-All necessary files can be found in the [TrustLink Backend Repository](https://github.com/hawkaii/TrustLink_backend).
 
 1. Clone the repository:
    ```bash
