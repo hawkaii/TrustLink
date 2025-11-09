@@ -8,6 +8,8 @@ import 'package:trustlink/res/extensions/validation_extensions.dart';
 import 'package:trustlink/res/extensions/widget_extensions.dart';
 import 'package:trustlink/view/auth/reset_password/reset_password_email.dart';
 import 'package:trustlink/view/auth/signup/signup_1.dart';
+import '../../../config/test_credentials.dart';
+import '../../../network/api_url/api_url.dart';
 import '../../../provider/auth_provider.dart';
 import '../../../res/assets/image_assets.dart';
 import '../../../res/constants/text_theme.dart';
@@ -51,6 +53,39 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(height: context.fullHeight * 0.04),
               const Text(kWelcomeBack, style: AppTextTheme.displayMediumAlt),
               const Text(kLetsMission, style: AppTextTheme.authtextreq),
+              // Show test mode indicator and credentials
+              if (ApiConstants.isUsingMockApi) ...[
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: context.fullHeight * 0.02),
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.orange.withOpacity(0.1),
+                    border: Border.all(color: Colors.orange),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    children: [
+                      const Text(
+                        "🧪 TEST MODE",
+                        style: TextStyle(
+                          color: Colors.orange,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        "Email: ${TestCredentials.testEmail}",
+                        style: const TextStyle(fontSize: 11, color: Colors.grey),
+                      ),
+                      Text(
+                        "Password: ${TestCredentials.testPassword}",
+                        style: const TextStyle(fontSize: 11, color: Colors.grey),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
               SizedBox(height: context.fullHeight * 0.03),
               Column(
                 children: [
@@ -58,6 +93,21 @@ class _LoginScreenState extends State<LoginScreen> {
                     controller: emailController,
                     hintText: kEnterPhone,
                   ),
+                  // Quick fill button for test mode
+                  if (ApiConstants.isUsingMockApi)
+                    Padding(
+                      padding: EdgeInsets.only(top: context.fullHeight * 0.01),
+                      child: TextButton(
+                        onPressed: () {
+                          emailController.text = TestCredentials.testEmail;
+                          passwordController.text = TestCredentials.testPassword;
+                        },
+                        child: const Text(
+                          "📝 Fill Test Credentials",
+                          style: TextStyle(fontSize: 12, color: Colors.blue),
+                        ),
+                      ),
+                    ),
                   SizedBox(height: context.fullHeight * 0.01),
                   Consumer<AuthProvider>(
                     builder: (context, authProvider, child) {

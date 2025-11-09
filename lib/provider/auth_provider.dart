@@ -1,8 +1,9 @@
 import 'dart:developer';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/get.dart' hide Response;
 import 'package:trustlink/res/constants/buttom_nav.dart';
+import '../config/test_credentials.dart';
 import '../network/api_url/api_url.dart';
 import '../res/builders/loader_builder.dart';
 import '../view/auth/signup/signup_verification.dart';
@@ -90,6 +91,12 @@ class AuthProvider with ChangeNotifier {
 
     try {
       loader.showLoader(title: "Login...");
+      
+      // Enhanced debug logging
+      log("🔐 Starting login attempt");
+      log("📧 Email: $email");
+      log("🌐 API Endpoint: ${ApiEndpoints.signIn}");
+      
       Map<String, dynamic> data = {
         "identifier": email,
         "password": password,
@@ -97,30 +104,92 @@ class AuthProvider with ChangeNotifier {
       Map<String, String> headers = {
         'Content-Type': 'application/json',
       };
+      
+      log("📤 Sending request with data: ${data.toString().replaceAll(password, '***')}");
+      
+      // Check if using mock API
+      if (ApiConstants.isUsingMockApi) {
+        log("🧪 Using mock API for testing");
+        
+        // Simulate network delay
+        await Future.delayed(const Duration(seconds: 1));
+        
+        // Check test credentials
+        if (email == TestCredentials.testEmail && password == TestCredentials.testPassword) {
+          loader.dismissLoader();
+          log("✅ Mock login successful with test credentials");
+          
+          ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            backgroundColor: Colors.green,
+            content: Text("✅ Login successful (Test Mode)"),
+            duration: Duration(seconds: 2),
+          ));
+          
+          Get.offAll(() => const ButtonNavigation());
+          return Response(
+            requestOptions: RequestOptions(path: ''),
+            statusCode: 200,
+            data: {"message": "Login successful", "user": {"email": email}},
+          );
+        } else {
+          throw DioException(
+            requestOptions: RequestOptions(path: ''),
+            response: Response(
+              requestOptions: RequestOptions(path: ''),
+              statusCode: 401,
+              data: {"message": "Invalid credentials. Use test@trustlink.dev / Test123!@#"},
+            ),
+          );
+        }
+      }
+      
       final response = await dio.post(
         ApiEndpoints.signIn,
         data: data,
         options: Options(headers: headers),
       );
+      
+      log("📥 Response received - Status: ${response.statusCode}");
+      
       if (response.statusCode == 201 || response.statusCode == 200) {
         loader.dismissLoader();
-        log("Response data : ${response.data}");
+        log("✅ Login successful - Response data: ${response.data}");
         Get.offAll(() => const ButtonNavigation());
         return response;
       }
     } on DioException catch (e) {
       loader.dismissLoader();
-      log("Login Failed $e");
+      
+      // Enhanced error logging
+      log("❌ DioException during login:");
+      log("   Type: ${e.type}");
+      log("   Message: ${e.message}");
+      log("   Response: ${e.response?.data}");
+      log("   Status Code: ${e.response?.statusCode}");
+      
+      String errorMessage = "Connection failed";
+      
+      if (e.type == DioExceptionType.connectionError || 
+          e.type == DioExceptionType.connectionTimeout ||
+          e.type == DioExceptionType.receiveTimeout) {
+        errorMessage = "Cannot reach server. Please check your internet connection.";
+        log("🌐 Network connectivity issue detected");
+      } else if (e.response != null) {
+        errorMessage = e.response?.data["message"] ?? "Server error occurred";
+      }
+      
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
         backgroundColor: Colors.red,
-        content: Text(e.response?.data["message"] ?? "An error occurred"),
+        content: Text(errorMessage),
+        duration: const Duration(seconds: 5),
       ));
     } catch (e) {
       loader.dismissLoader();
-      log("Unexpected error during login: $e");
+      log("💥 Unexpected error during login: $e");
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
         backgroundColor: Colors.red,
         content: Text("An unexpected error occurred"),
+        duration: const Duration(seconds: 5),
       ));
     } finally {
       loader.dismissLoader();
