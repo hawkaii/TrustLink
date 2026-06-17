@@ -1,7 +1,10 @@
+import 'dart:developer';
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trustlink/network/api_url/api_url.dart';
 import 'package:trustlink/res/assets/image_assets.dart';
 
 import '../auth/signup/controller/signup1_controller.dart';
@@ -18,20 +21,57 @@ class SharingScreen extends StatefulWidget {
 
 class _SharingScreenState extends State<SharingScreen> {
   int _selectedIndex = 0;
+  final TextEditingController _textController = TextEditingController();
+  bool _isPosting = false;
 
   final List<String> _tabs = ['Activity', 'Requirement', 'Moment'];
+
+  Future<void> _createTextPost() async {
+    final text = _textController.text.trim();
+    if (text.isEmpty) return;
+
+    setState(() => _isPosting = true);
+    try {
+      final response = await dio.post(
+        ApiEndpoints.feed,
+        data: {'text': text},
+      );
+      log('Post created: ${response.statusCode}');
+      _textController.clear();
+      Get.snackbar('Posted!', 'Your post is live.',
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.green,
+          colorText: Colors.white);
+    } on DioException catch (e) {
+      final msg = e.response?.data is Map
+          ? (e.response?.data['error']?['message'] ?? 'Failed to post')
+          : 'Failed to post';
+      Get.snackbar('Error', msg,
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.red,
+          colorText: Colors.white);
+    } finally {
+      setState(() => _isPosting = false);
+    }
+  }
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(60.0), // Adjust height as needed
+        preferredSize: const Size.fromHeight(60.0),
         child: AppBar(
-          automaticallyImplyLeading: false, // Remove default back button
+          automaticallyImplyLeading: false,
           backgroundColor: Colors.white,
           elevation: 0,
           flexibleSpace: SafeArea(
-            child: _buildHeader(), // Use your custom header
+            child: _buildHeader(),
           ),
         ),
       ),
@@ -66,26 +106,30 @@ class _SharingScreenState extends State<SharingScreen> {
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 12),
                       ),
-                      onPressed: () {
-                        // Button action
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          const Text(
-                            "Share",
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black,
+                      onPressed: _isPosting ? null : _createTextPost,
+                      child: _isPosting
+                          ? const SizedBox(
+                              width: 16,
+                              height: 16,
+                              child: CircularProgressIndicator(
+                                  strokeWidth: 2, color: Colors.black))
+                          : Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                const Text(
+                                  "Share",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
+                                ),
+                                const SizedBox(width: 8),
+                                SvgPicture.asset(
+                                  CustomImageAsset.shareArrow,
+                                  height: 16,
+                                )
+                              ],
                             ),
-                          ),
-                          const SizedBox(width: 8),
-                          SvgPicture.asset(
-                            CustomImageAsset.shareArrow,
-                            height: 16,
-                          )
-                        ],
-                      ),
                     )
                   ],
                 ),
@@ -102,114 +146,6 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     backgroundColor: Colors.white,
-  //     body: SafeArea(
-  //       child: Column(
-  //         crossAxisAlignment: CrossAxisAlignment.start,
-  //         children: [
-  //           _buildHeader(),
-  //           const SizedBox(
-  //             height: 20,
-  //           ),
-  //           Divider(color: Colors.grey.shade300, height: 1),
-  //           const SizedBox(
-  //             height: 10,
-  //           ),
-  //           Padding(
-  //             padding: const EdgeInsets.all(8.0),
-  //             child: Row(
-  //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-  //               children: [
-  //                 Text(
-  //                   _tabs[_selectedIndex],
-  //                   style: GoogleFonts.inter(
-  //                       color: Colors.black,
-  //                       fontSize: 18,
-  //                       fontWeight: FontWeight.w400),
-  //                 ),
-  //                 OutlinedButton(
-  //                   style: OutlinedButton.styleFrom(
-  //                     side: const BorderSide(color: Colors.black, width: 1),
-  //                     // Outline border
-  //                     shape: RoundedRectangleBorder(
-  //                       borderRadius:
-  //                           BorderRadius.circular(20), // Rounded edges
-  //                     ),
-  //                     padding: const EdgeInsets.symmetric(
-  //                         horizontal: 20, vertical: 12), // Padding
-  //                   ),
-  //                   onPressed: () {
-  //                     // Button action
-  //                   },
-  //                   child: Row(
-  //                     mainAxisSize: MainAxisSize.min,
-  //                     children: [
-  //                       const Text(
-  //                         "Share",
-  //                         style: TextStyle(
-  //                           fontSize: 16,
-  //                           color: Colors.black, // Text color
-  //                         ),
-  //                       ),
-  //                       const SizedBox(width: 8), // Space between text and icon
-  //                       SvgPicture.asset(
-  //                         CustomImageAsset.shareArrow,
-  //                         height: 16,
-  //                       )
-  //                     ],
-  //                   ),
-  //                 )
-  //                 // OutlinedButton(
-  //                 //   onPressed: () {
-  //                 //     // Add your onPressed action here
-  //                 //   },
-  //                 //   style: OutlinedButton.styleFrom(
-  //                 //     backgroundColor: Colors.white, // White background
-  //                 //     side: const BorderSide(
-  //                 //         color: Colors.grey, width: 1.5),
-  //                 //     minimumSize: const Size(50, 38),
-  //                 //     shape: RoundedRectangleBorder(
-  //                 //       borderRadius:
-  //                 //       BorderRadius.circular(14.0), // Rounded corners
-  //                 //     ),
-  //                 //   ),
-  //                 //   child: const Row(
-  //                 //     mainAxisAlignment: MainAxisAlignment.spaceAround,
-  //                 //     children: [
-  //                 //       Text(
-  //                 //         'Share',
-  //                 //         style: TextStyle(
-  //                 //           color: Colors.black, // Black text color
-  //                 //           fontWeight: FontWeight.bold,
-  //                 //         ),
-  //                 //       ),
-  //                 //       Icon(Icons.share_rounded,
-  //                 //           color: Colors.black), // Share icon
-  //                 //     ],
-  //                 //   ),
-  //                 // ),
-  //               ],
-  //             ),
-  //           ),
-  //           const SizedBox(
-  //             height: 10,
-  //           ),
-  //           Divider(color: Colors.grey.shade300, height: 1),
-  //           const SizedBox(
-  //             height: 10,
-  //           ),
-  //           _buildCurrentScreen(),
-  //         ],
-  //       ),
-  //     ),
-  //     bottomNavigationBar: _buildBottomNavBar(),
-  //   );
-  // }
-
-  // Header with back button and title
   Widget _buildHeader() {
     return Padding(
       padding: const EdgeInsets.all(7.0),
@@ -222,7 +158,6 @@ class _SharingScreenState extends State<SharingScreen> {
           const SizedBox(width: 5),
           Text(
             "Share Something Interesting",
-            //, // Title changes dynamically
             style: GoogleFonts.inter(
               color: Colors.black,
               fontSize: 18,
@@ -234,37 +169,22 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Conditionally display content based on the selected index
   Widget _buildCurrentScreen() {
     switch (_selectedIndex) {
-      case 0: // Activity Screen
+      case 0:
         return _buildActivityScreen();
-      case 1: // Requirement Screen
+      case 1:
         return _buildRequirementScreen();
-      case 2: // Moment Screen
+      case 2:
         return _buildMomentScreen();
       default:
         return _buildActivityScreen();
     }
   }
 
-  // Activity Screen UI
-  // Widget _buildActivityScreen() {
-  //   return Expanded(
-  //     child: Column(
-  //       children: [
-  //         _buildTextField(),
-  //         const SizedBox(height: 20),
-  //         _buildIconRow(),
-  //         const SizedBox(height: 20),
-  //         _buildImageRow(),
-  //       ],
-  //     ),
-  //   );
-  // }
   Widget _buildActivityScreen() {
     return SizedBox(
-      height: 400, // Set a specific height to avoid infinite constraints
+      height: 400,
       child: Column(
         children: [
           _buildTextField(),
@@ -277,7 +197,6 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Requirement Screen UI
   Widget _buildRequirementScreen() {
     return SizedBox(
       height: 600,
@@ -293,9 +212,7 @@ class _SharingScreenState extends State<SharingScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             TextField(
               maxLines: 3,
               decoration: InputDecoration(
@@ -305,9 +222,7 @@ class _SharingScreenState extends State<SharingScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Location',
@@ -316,9 +231,7 @@ class _SharingScreenState extends State<SharingScreen> {
                     OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
               ),
             ),
-            const SizedBox(
-              height: 20,
-            ),
+            const SizedBox(height: 20),
             TextField(
               decoration: InputDecoration(
                 hintText: 'Profession',
@@ -333,7 +246,6 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Moment Screen UI
   Widget _buildMomentScreen() {
     return SizedBox(
       height: 600,
@@ -368,22 +280,20 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Text field
   Widget _buildTextField() {
     return Padding(
       padding: const EdgeInsets.all(10.0),
       child: TextField(
+        controller: _textController,
         maxLines: 5,
         decoration: InputDecoration(
           hintText: 'Write something interesting here...',
           hintStyle: TextStyle(color: Colors.grey.shade600),
-          // border: OutlineInputBorder(borderRadius: BorderRadius.circular(14)),
         ),
       ),
     );
   }
 
-  // Icon Row
   Widget _buildIconRow() {
     final List<IconData> iconPaths = [
       Icons.photo_outlined,
@@ -415,7 +325,6 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Horizontal Image Row
   Widget _buildImageRow() {
     final List<String> imagePaths = [
       CustomImageAsset.mountains,
@@ -447,7 +356,6 @@ class _SharingScreenState extends State<SharingScreen> {
     );
   }
 
-  // Bottom Navigation Bar
   Widget _buildBottomNavBar() {
     return Container(
       height: 56,

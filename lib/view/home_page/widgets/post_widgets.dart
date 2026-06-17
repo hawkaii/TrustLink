@@ -34,9 +34,9 @@ class UserPost extends StatelessWidget {
             child: CircleAvatar(
               radius: 30,
               backgroundColor: Colors.grey.shade300,
-              backgroundImage: post.profileImage.startsWith('http')
-                  ? NetworkImage(post.profileImage)
-                  : AssetImage(post.profileImage) as ImageProvider,
+              backgroundImage: post.authorPhotoUrl.isNotEmpty
+                  ? NetworkImage(post.authorPhotoUrl)
+                  : AssetImage(CustomImageAsset.thumb) as ImageProvider,
             ),
 
           ),
@@ -44,9 +44,9 @@ class UserPost extends StatelessWidget {
             onTap: () {
               Get.to(UserProfilePage(scrollController: scrollController));
             },
-            child: Text(post.username),
+            child: Text(post.authorDisplayName),
           ),
-          subtitle: Text(post.time),
+          subtitle: Text(post.createdAt),
           trailing: const AppIcons(
             imagePath: CustomImageAsset.personAdd,
             showBorder: false,
@@ -55,22 +55,17 @@ class UserPost extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10),
-          child: Text(post.description),
+          child: Text(post.text),
         ),
         const SizedBox(height: 8),
-        (post.postImg.startsWith('http')
+        (post.mediaUrls.isNotEmpty && post.mediaUrls.first.startsWith('http'))
             ? Image.network(
-                post.postImg,
+                post.mediaUrls.first,
                 fit: BoxFit.cover,
                 width: double.infinity,
                 height: context.fullHeight * 0.4,
               )
-            : Image.asset(
-                post.postImg,
-                fit: BoxFit.fill,
-                width: double.infinity,
-                height: context.fullHeight * 0.4,
-              )),
+            : const SizedBox.shrink(),
 
         SizedBox(height: context.fullHeight * 0.01),
         Padding(

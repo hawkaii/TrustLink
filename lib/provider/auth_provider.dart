@@ -115,40 +115,4 @@ class AuthProvider with ChangeNotifier {
     }
     return null;
   }
-
-
-  static checkAuthStatus(String token) async {
-    try {
-      final response = await dio.get(
-        ApiEndpoints.authStatus,
-        options: Options(
-          headers: {
-            'Authorization': 'Bearer $token',
-            'Content-Type': 'application/json',
-          },
-        ),
-      );
-
-      if (response.statusCode == 200) {
-        log("Auth status checked: ${response.data}");
-      } else {
-        log("Error response: ${response.data}");
-        throw Exception(
-            response.data['message'] ?? "Failed to check auth status");
-      }
-    } on DioException catch (e) {
-      log("Auth status check failed: $e");
-      if (e.response != null && e.response?.data != null) {
-        throw Exception(
-            e.response?.data['message'] ?? "Failed to check auth status");
-      }
-      throw DioException(
-        requestOptions: RequestOptions(path: ''),
-        error: "Failed to check auth status",
-      );
-    } catch (e) {
-      log("Unexpected error: $e");
-      throw Exception("An unexpected error occurred: $e");
-    }
-  }
 }

@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:trustlink/res/extensions/media_query_extensions.dart';
@@ -9,7 +10,6 @@ import '../../models/home/user_model.dart';
 import '../../res/assets/image_assets.dart';
 import '../setting/setting_screen.dart';
 import '../../network/api_url/api_url.dart';
-
 
 class HomePage extends StatefulWidget {
   final ScrollController scrollController;
@@ -30,36 +30,11 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<List<Post>> fetchPosts() async {
-    return [
-      Post(
-        username: 'Christopher Nolan',
-        time: 'Just a moment ago',
-        postImg: CustomImageAsset.back,
-        profileImage: CustomImageAsset.thumb,
-        description: 'Dynamic post from backend!',
-      ),
-      Post(
-        username: 'Ankit Patel',
-        profileImage: CustomImageAsset.splashScreenImg,
-        time: '5 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.splashScreenImg,
-      ),
-      Post(
-        username: 'Anurag Singh',
-        profileImage: CustomImageAsset.star,
-        time: '15 minutes ago',
-        description: 'Learning Flutter, it’s awesome.',
-        postImg: CustomImageAsset.dynamic,
-      ),
-      Post(
-        username: 'Archi',
-        profileImage: CustomImageAsset.splashScreenImg,
-        time: '5 minutes ago',
-        description: 'Learning Android, it’s awesome.',
-        postImg: CustomImageAsset.splashScreenImg,
-      ),
-    ];
+    final res = await dio.get(ApiEndpoints.feed);
+    final data = res.data;
+    // Backend returns {"posts": [...], "count": N}
+    final List postsJson = data is Map ? (data['posts'] ?? []) : (data ?? []);
+    return postsJson.map((e) => Post.fromJson(e)).toList();
   }
 
   @override

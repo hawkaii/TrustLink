@@ -7,10 +7,11 @@ class ApiConstants {
   // Backend base (Go API)
   static const String localBackend = "http://localhost:8080";
   static const String deviceBackend = "http://10.0.2.2:8080"; // Android emulator
+  static const String prodBackend = "http://35.253.120.86:8080"; // VM
 
-  // Existing demo/mock endpoints kept for legacy flows
-  static const String prodBaseUrl = deviceBackend; // point to backend for now
-  static const String devBaseUrl = deviceBackend;
+  // Use deviceBackend for emulator, prodBackend for physical device
+  static const String prodBaseUrl = prodBackend;
+  static const String devBaseUrl = prodBackend;
 
   static String get baseUrl => devBaseUrl;
 
@@ -31,9 +32,6 @@ final dio = Dio(BaseOptions(baseUrl: ApiConstants.baseUrl))
   }));
 
 class ApiEndpoints {
-  static String get signIn => "${ApiConstants.baseUrl}/auth/signin"; // legacy unused
-  static String get signUp => "${ApiConstants.baseUrl}/auth/signup"; // legacy unused
-  static String get authStatus => "${ApiConstants.baseUrl}/auth/status"; // legacy unused
-  static String get me => "${ApiConstants.baseUrl}/me";
-  static String get feed => "${ApiConstants.baseUrl}/feed";
+  static String get me => "${ApiConstants.baseUrl}/v1/profile/me";
+  static String get feed => "${ApiConstants.baseUrl}/v1/posts";
 }

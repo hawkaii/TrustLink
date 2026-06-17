@@ -12,29 +12,38 @@ class User {
   });
 }
 
-// Model Class for Posts
+// Model Class for Posts from the backend API
 class Post {
-  final String profileImage;
-  final String username;
-  final String time;
-  final String description;
-  final String postImg;
+  final String id;
+  final String authorUid;
+  final String authorDisplayName;
+  final String authorPhotoUrl;
+  final String text;
+  final List<String> mediaUrls;
+  final String createdAt;
 
   Post({
-    required this.profileImage,
-    required this.username,
-    required this.time,
-    required this.description,
-    required this.postImg,
+    required this.id,
+    required this.authorUid,
+    required this.authorDisplayName,
+    this.authorPhotoUrl = '',
+    required this.text,
+    this.mediaUrls = const [],
+    required this.createdAt,
   });
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
-      profileImage: json['profileImage'],
-      username: json['username'],
-      time: json['time'],
-      description: json['description'],
-      postImg: json['postImg'],
+      id: json['id'] ?? '',
+      authorUid: json['authorUid'] ?? '',
+      authorDisplayName: json['authorDisplayName'] ?? 'Unknown',
+      authorPhotoUrl: json['authorPhotoUrl'] ?? '',
+      text: json['text'] ?? '',
+      mediaUrls: (json['mediaUrls'] as List<dynamic>?)
+              ?.map((e) => e.toString())
+              .toList() ??
+          [],
+      createdAt: json['createdAt'] ?? '',
     );
   }
 }
