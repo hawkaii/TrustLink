@@ -22,6 +22,7 @@ class _ButtonNavigationState extends State<ButtonNavigation>
     with SingleTickerProviderStateMixin {
   late int currentPage;
   late TabController tabController;
+  late ScrollController scrollController;
 
   final List<Color> colors = [
     Colors.yellow,
@@ -35,6 +36,7 @@ class _ButtonNavigationState extends State<ButtonNavigation>
   void initState() {
     currentPage = 0;
     tabController = TabController(length: 5, vsync: this);
+    scrollController = ScrollController();
     tabController.animation!.addListener(() {
       final value = tabController.animation!.value.round();
       if (value != currentPage && mounted) {
@@ -52,6 +54,7 @@ class _ButtonNavigationState extends State<ButtonNavigation>
 
   @override
   void dispose() {
+    scrollController.dispose();
     tabController.dispose();
     super.dispose();
   }
@@ -64,7 +67,6 @@ class _ButtonNavigationState extends State<ButtonNavigation>
 
     return Scaffold(
       body: BottomBar(
-        fit: StackFit.expand,
         icon: (width, height) => Center(
           child: IconButton(
             padding: EdgeInsets.zero,
@@ -76,30 +78,40 @@ class _ButtonNavigationState extends State<ButtonNavigation>
             ),
           ),
         ),
-        borderRadius: BorderRadius.circular(400),
-        duration: const Duration(seconds: 1),
-        curve: Curves.decelerate,
         showIcon: true,
-        width: context.fullWidth * 0.8,
-        barColor: colors[currentPage].computeLuminance() > 0.5
-            ? Colors.black
-            : Colors.black,
-        start: 2,
-        end: 0,
-        barAlignment: Alignment.bottomCenter,
-        reverse: false,
-        hideOnScroll: true,
-        scrollOpposite: false,
-        body: (context, controller) => TabBarView(
+        layout: BottomBarLayout(
+          fit: StackFit.expand,
+          width: context.fullWidth * 0.8,
+          borderRadius: BorderRadius.circular(400),
+          alignment: Alignment.bottomCenter,
+        ),
+        motion: BottomBarMotion(
+          duration: const Duration(seconds: 1),
+          curve: Curves.decelerate,
+        ),
+        scrollBehavior: const BottomBarScrollBehavior(
+          hideOnScroll: true,
+          reverse: false,
+          scrollOpposite: false,
+        ),
+        theme: BottomBarThemeData(
+          barDecoration: BoxDecoration(
+            color: colors[currentPage].computeLuminance() > 0.5
+                ? Colors.black
+                : Colors.black,
+            borderRadius: BorderRadius.circular(400),
+          ),
+        ),
+        body: TabBarView(
           controller: tabController,
           dragStartBehavior: DragStartBehavior.down,
           physics: const BouncingScrollPhysics(),
           children: [
-            HomePage(scrollController: controller),
-            RequirementScreen(scrollController: controller),
-            SharingScreen(scrollController: controller),
-            ChatListScreen(scrollController: controller),
-            UserProfilePage(scrollController: controller),
+            HomePage(scrollController: scrollController),
+            RequirementScreen(scrollController: scrollController),
+            SharingScreen(scrollController: scrollController),
+            ChatListScreen(scrollController: scrollController),
+            UserProfilePage(scrollController: scrollController),
           ],
         ),
         child: currentPage != 2

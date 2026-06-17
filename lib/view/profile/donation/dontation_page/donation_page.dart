@@ -72,7 +72,7 @@ class _DonationPageState extends State<DonationPage> {
                     hintText: " 0.00",
 
                     //border: OutlineInputBorder(),
-                    prefixIcon: Icon(FontAwesomeIcons.dollarSign),
+                    prefixIcon: FaIcon(FontAwesomeIcons.dollarSign),
                     prefixIconConstraints: const BoxConstraints(
                       minWidth: 0.0,
                     ),

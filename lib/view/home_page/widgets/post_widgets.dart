@@ -34,8 +34,11 @@ class UserPost extends StatelessWidget {
             child: CircleAvatar(
               radius: 30,
               backgroundColor: Colors.grey.shade300,
-              child: Image.asset(post.profileImage),
+              backgroundImage: post.profileImage.startsWith('http')
+                  ? NetworkImage(post.profileImage)
+                  : AssetImage(post.profileImage) as ImageProvider,
             ),
+
           ),
           title: GestureDetector(
             onTap: () {
@@ -55,12 +58,20 @@ class UserPost extends StatelessWidget {
           child: Text(post.description),
         ),
         const SizedBox(height: 8),
-        Image.asset(
-          post.postImg,
-          fit: BoxFit.fill,
-          width: double.infinity,
-          height: context.fullHeight * 0.4,
-        ),
+        (post.postImg.startsWith('http')
+            ? Image.network(
+                post.postImg,
+                fit: BoxFit.cover,
+                width: double.infinity,
+                height: context.fullHeight * 0.4,
+              )
+            : Image.asset(
+                post.postImg,
+                fit: BoxFit.fill,
+                width: double.infinity,
+                height: context.fullHeight * 0.4,
+              )),
+
         SizedBox(height: context.fullHeight * 0.01),
         Padding(
           padding: const EdgeInsets.only(left: 15, right: 35),

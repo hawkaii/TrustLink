@@ -8,6 +8,8 @@ import 'package:trustlink/view/profile/user_profile/widgets/moments_item.dart';
 import '../../models/home/user_model.dart';
 import '../../res/assets/image_assets.dart';
 import '../setting/setting_screen.dart';
+import '../../network/api_url/api_url.dart';
+
 
 class HomePage extends StatefulWidget {
   final ScrollController scrollController;
